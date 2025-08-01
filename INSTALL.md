@@ -17,8 +17,8 @@ curl -fsSL https://raw.githubusercontent.com/BrianAndersEricson/archy/main/boot.
 ### Method 2: Clone and Install
 
 ```bash
-git clone https://github.com/BrianAndersEricson/archy.git ~/.local/share/omarchy
-cd ~/.local/share/omarchy
+git clone https://github.com/BrianAndersEricson/archy.git ~/.local/share/archy
+cd ~/.local/share/archy
 bash install.sh
 ```
 
@@ -83,8 +83,8 @@ ARCHY_REF=your-branch-name bash boot.sh
 If installation fails:
 
 1. **Check logs**: The installer will show where it failed
-2. **Retry**: Run `bash ~/.local/share/omarchy/install.sh`
-3. **Manual cleanup**: `rm -rf ~/.local/share/omarchy` and start over
+2. **Retry**: Run `bash ~/.local/share/archy/install.sh`
+3. **Manual cleanup**: `rm -rf ~/.local/share/archy` and start over
 
 ## System Requirements
 
@@ -104,7 +104,7 @@ If installation fails:
 
 ## Notes
 
-- The installation directory remains `~/.local/share/omarchy` for compatibility
+- The installation directory remains `~/.local/share/archy` for compatibility
 - All Archy-specific commands are prefixed with `archy-`
 - Your custom `.bash_aliases` will be automatically loaded
 - Themes use direct file copying instead of symlinks for easier customization

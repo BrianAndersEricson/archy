@@ -10,6 +10,7 @@ if [[ -f ~/.local/share/applications/blueberry.desktop ]]; then
   archy-refresh-waybar
 fi
 
-if [[ ! -L "~/.config/omarchy/themes/rose-pine" ]]; then
-  ln -snf ~/.local/share/omarchy/themes/rose-pine ~/.config/omarchy/themes/
+if [[ ! -d ~/.config/archy/themes/rose-pine ]]; then
+  mkdir -p ~/.config/archy/themes/
+  cp -r ~/.local/share/archy/themes/rose-pine ~/.config/archy/themes/
 fi

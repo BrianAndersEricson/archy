@@ -1,2 +1,2 @@
 echo "Copy desktop file for new Archy TUI"
-cp ~/.local/share/omarchy/applications/omarchy.desktop ~/.local/share/applications/
+cp ~/.local/share/archy/applications/archy.desktop ~/.local/share/applications/

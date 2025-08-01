@@ -4,10 +4,10 @@
 # using walker for an interactive search menu.
 
 USER_HYPRLAND_CONF="$HOME/.config/hypr/hyprland.conf"
-OMARCHY_BINDINGS_CONF="$HOME/.local/share/omarchy/default/hypr/bindings.conf \
-$HOME/.local/share/omarchy/default/hypr/bindings/tiling.conf \
-$HOME/.local/share/omarchy/default/hypr/bindings/utilities.conf \
-$HOME/.local/share/omarchy/default/hypr/bindings/media.conf"
+OMARCHY_BINDINGS_CONF="$HOME/.local/share/archy/default/hypr/bindings.conf \
+$HOME/.local/share/archy/default/hypr/bindings/tiling.conf \
+$HOME/.local/share/archy/default/hypr/bindings/utilities.conf \
+$HOME/.local/share/archy/default/hypr/bindings/media.conf"
 
 # Process the configuration file to extract and format keybindings
 # 1. `grep` finds all lines starting with 'bind' (allowing for leading spaces).

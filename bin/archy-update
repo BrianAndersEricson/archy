@@ -5,7 +5,7 @@ set -e
 
 STATE_DIR="$HOME/.local/state/omarchy/migrations"
 
-cd ~/.local/share/omarchy
+cd ~/.local/share/archy
 
 # Create the migrations state directory, we will store an empty file for each migration that has already been performed.
 mkdir -p "$STATE_DIR"

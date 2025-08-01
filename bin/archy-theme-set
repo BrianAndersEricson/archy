@@ -25,6 +25,9 @@ rm -rf "$CURRENT_THEME_DIR"
 mkdir -p "$CURRENT_THEME_DIR"
 cp -r "$THEME_PATH"/* "$CURRENT_THEME_DIR/"
 
+# Save current theme name for tracking
+echo "$THEME_NAME" > "$HOME/.config/archy/current/.theme-name"
+
 # Change gnome modes
 if [[ -f ~/.config/archy/current/theme/light.mode ]]; then
   gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
@@ -51,4 +54,4 @@ cp "$CURRENT_THEME_DIR/btop.theme" "$HOME/.config/btop/themes/current.theme" 2>/
 cp "$CURRENT_THEME_DIR/mako.ini" "$HOME/.config/mako/config" 2>/dev/null || true
 
 # Set new background
-"$HOME/.local/share/omarchy/bin/archy-theme-bg-next"
+"$HOME/.local/share/archy/bin/archy-theme-bg-next"

@@ -16,4 +16,4 @@ if [ -z "$ARCHY_BARE" ]; then
 fi
 
 # Copy over Archy applications
-source ~/.local/share/omarchy/bin/archy-refresh-applications || true
+source ~/.local/share/archy/bin/archy-refresh-applications || true

@@ -15,13 +15,16 @@ gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
 # Copy themes instead of symlinking
 mkdir -p ~/.config/archy/themes
-cp -r ~/.local/share/omarchy/themes/* ~/.config/archy/themes/
+cp -r ~/.local/share/archy/themes/* ~/.config/archy/themes/
 
 # Set initial theme by copying
 mkdir -p ~/.config/archy/current/theme
 cp -r ~/.config/archy/themes/tokyo-night/* ~/.config/archy/current/theme/
 cp ~/.config/archy/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png ~/.config/archy/current/background
 echo "~/.config/archy/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png" > ~/.config/archy/current/.background-state
+
+# Save current theme name for tracking
+echo "tokyo-night" > ~/.config/archy/current/.theme-name
 
 # Copy specific app configs for current theme
 cp ~/.config/archy/current/theme/neovim.lua ~/.config/nvim/lua/plugins/theme.lua

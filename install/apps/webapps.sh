@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$ARCHY_BARE" ]; then
-  source ~/.local/share/omarchy/default/bash/functions
+  source ~/.local/share/archy/default/bash/functions
   # Removed HEY and Basecamp - not needed for Archy
   web2app "WhatsApp" https://web.whatsapp.com/ https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/whatsapp.png
   web2app "Google Photos" https://photos.google.com/ https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/google-photos.png

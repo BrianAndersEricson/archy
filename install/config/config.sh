@@ -1,23 +1,23 @@
 #!/bin/bash
 
 # Copy over Archy configs
-cp -R ~/.local/share/omarchy/config/* ~/.config/
+cp -R ~/.local/share/archy/config/* ~/.config/
 
 # Use default bashrc from Archy
-cp ~/.local/share/omarchy/default/bashrc ~/.bashrc
+cp ~/.local/share/archy/default/bashrc ~/.bashrc
 
 # Ensure application directory exists for update-desktop-database
 mkdir -p ~/.local/share/applications
 
 # If bare install, allow a way for its exclusions to not get added in updates
 if [ -n "$ARCHY_BARE" ]; then
-  mkdir -p ~/.local/state/omarchy
-  touch ~/.local/state/omarchy/bare.mode
+  mkdir -p ~/.local/state/archy
+  touch ~/.local/state/archy/bare.mode
 fi
 
 # Setup GPG configuration with multiple keyservers for better reliability
 sudo mkdir -p /etc/gnupg
-sudo cp ~/.local/share/omarchy/default/gpg/dirmngr.conf /etc/gnupg/
+sudo cp ~/.local/share/archy/default/gpg/dirmngr.conf /etc/gnupg/
 sudo chmod 644 /etc/gnupg/dirmngr.conf
 sudo gpgconf --kill dirmngr || true
 sudo gpgconf --launch dirmngr || true
@@ -45,7 +45,7 @@ fi
 
 # Set default XCompose that is triggered with CapsLock
 tee ~/.XCompose >/dev/null <<EOF
-include "%H/.local/share/omarchy/default/xcompose"
+include "%H/.local/share/archy/default/xcompose"
 
 # Identification
 <Multi_key> <space> <n> : "$ARCHY_USER_NAME"

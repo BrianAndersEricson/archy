@@ -1,8 +1,8 @@
 #!/bin/bash
 
-THEMES_DIR="$HOME/.config/omarchy/themes/"
-CURRENT_THEME_DIR="$HOME/.config/omarchy/current/theme"
-CURRENT_THEME_NAME=$(basename "$(realpath "$CURRENT_THEME_DIR")")
+THEMES_DIR="$HOME/.config/archy/themes/"
+CURRENT_THEME_DIR="$HOME/.config/archy/current/theme"
+CURRENT_THEME_NAME=$(cat "$HOME/.config/archy/current/.theme-name" 2>/dev/null || echo "tokyo-night")
 
 # Build themes list with pretty display names
 mapfile -t themes < <(
@@ -28,4 +28,4 @@ clean_selection=$(echo "$selection" | sed -E 's/<[^>]+>//g')
 selected_theme=$(echo "$clean_selection" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 
 # Apply the selected theme
-"$HOME/.local/share/omarchy/bin/archy-theme-set" "$selected_theme"
+"$HOME/.local/share/archy/bin/archy-theme-set" "$selected_theme"

@@ -3,12 +3,12 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-ARCHY_INSTALL=~/.local/share/omarchy/install
+ARCHY_INSTALL=~/.local/share/archy/install
 
 # Give people a chance to retry running the installation
 catch_errors() {
   echo -e "\n\e[31mArchy installation failed!\e[0m"
-  echo "You can retry by running: bash ~/.local/share/omarchy/install.sh"
+  echo "You can retry by running: bash ~/.local/share/archy/install.sh"
   echo "Get help from the community: https://discord.gg/tXFUdasqhY"
 }
 
@@ -16,7 +16,7 @@ trap catch_errors ERR
 
 show_logo() {
   clear
-  tte -i ~/.local/share/omarchy/logo.txt --frame-rate ${2:-120} ${1:-expand}
+  tte -i ~/.local/share/archy/logo.txt --frame-rate ${2:-120} ${1:-expand}
   echo
 }
 
