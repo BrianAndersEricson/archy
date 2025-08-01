@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# archy-theme-set: Set a theme, specified by its name.
+# Usage: archy-theme-set <theme-name>
+
+if [[ -z "$1" ]]; then
+  echo "Usage: archy-theme-set <theme-name>" >&2
+  exit 1
+fi
+
+THEMES_DIR="$HOME/.config/omarchy/themes/"
+CURRENT_THEME_DIR="$HOME/.config/omarchy/current/theme"
+
+THEME_NAME="$1"
+THEME_PATH="$THEMES_DIR/$THEME_NAME"
+
+# Check if the theme entered exists
+if [[ ! -d "$THEME_PATH" ]]; then
+  echo "Theme '$THEME_NAME' does not exist in $THEMES_DIR" >&2
+  exit 2
+fi
+
+# Copy theme files instead of symlinking
+rm -rf "$CURRENT_THEME_DIR"
+mkdir -p "$CURRENT_THEME_DIR"
+cp -r "$THEME_PATH"/* "$CURRENT_THEME_DIR/"
+
+# Change gnome modes
+if [[ -f ~/.config/omarchy/current/theme/light.mode ]]; then
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+  gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+else
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+fi
+
+# Trigger alacritty config reload
+touch "$HOME/.config/alacritty/alacritty.toml"
+
+# Restart components to apply new theme
+pkill -SIGUSR2 btop
+pkill -SIGUSR2 waybar
+pkill swayosd-server
+setsid uwsm app -- swayosd-server &>/dev/null &
+makoctl reload
+hyprctl reload
+
+# Copy theme-specific application configs
+cp "$CURRENT_THEME_DIR/neovim.lua" "$HOME/.config/nvim/lua/plugins/theme.lua" 2>/dev/null || true
+cp "$CURRENT_THEME_DIR/btop.theme" "$HOME/.config/btop/themes/current.theme" 2>/dev/null || true
+cp "$CURRENT_THEME_DIR/mako.ini" "$HOME/.config/mako/config" 2>/dev/null || true
+
+# Set new background
+"$HOME/.local/share/omarchy/bin/archy-theme-bg-next"

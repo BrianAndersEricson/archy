@@ -1,0 +1,67 @@
+# https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-latte.toml
+
+[colors.primary]
+background = "#080808"
+foreground = "#e2e2e2"
+dim_foreground = "#e2e2e2"
+bright_foreground = "#e2e2e2"
+
+[colors.cursor]
+text = "#eff1f5"
+cursor = "#dc8a78"
+
+[colors.vi_mode_cursor]
+text = "#eff1f5"
+cursor = "#7287fd"
+
+[colors.search.matches]
+foreground = "#e2e2e2"
+background = "#080808"
+
+[colors.search.focused_match]
+foreground = "#e2e2e2"
+background = "#080808"
+
+[colors.footer_bar]
+foreground = "#e2e2e2"
+background = "#080808"
+
+[colors.hints.start]
+foreground = "#e2e2e2"
+background = "#080808"
+
+[colors.hints.end]
+foreground = "#e2e2e2"
+background = "#080808"
+
+[colors.selection]
+text = "#eff1f5"
+background = "#080808"
+
+[colors.normal]
+black = "#222222"
+red = "#db475f"
+green = "#5f953c"
+yellow = "#ac7925"
+blue = "#3d85dc"
+magenta = "#b250d9"
+cyan = "#2a9595"
+white = "#b9b9b9"
+
+[colors.bright]
+black = "#525252"
+red = "#ed6677"
+green = "#6ead47"
+yellow = "#c68c2e"
+blue = "#5a9bec"
+magenta = "#c36ee7"
+cyan = "#33acac"
+white = "#f1f1f1"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#fe640b"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#dc8a78"

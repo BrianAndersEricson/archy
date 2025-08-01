@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Archy
+Comment=Archy TUI
+Exec=alacritty --class=Archy --title=Archy -e bash -c '$HOME/.local/share/omarchy/bin/archy'
+Icon=Arch
+Terminal=false
+Categories=System;Utility;
+StartupNotify=false 

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Overwrite local Hyprlock settings with the latest in Omarchy
+archy-refresh-config hypr/hyprlock.conf

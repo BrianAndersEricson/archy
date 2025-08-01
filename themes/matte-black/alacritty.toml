@@ -1,0 +1,53 @@
+# ────────────────────────────────────────────────────────────
+# Archy Matte Black Theme for Alacritty
+# By tahayvr
+# https://github.com/tahayvr
+# ────────────────────────────────────────────────────────────
+
+[window]
+# window padding {px}
+padding.x = 12
+padding.y = 12
+
+[font]
+size = 12.0
+
+
+
+[colors]
+[colors.primary]
+background = "#080808"
+foreground = "#e2e2e2"
+dim_foreground = "#e2e2e2"
+
+[colors.cursor]
+text = "#121212"
+cursor = "#eaeaea"
+
+[colors.vi_mode_cursor]
+text = "#121212"
+cursor = "#eaeaea"
+
+[colors.selection]
+text = "CellForeground"
+background = "#080808"
+
+[colors.normal]
+black = "#222222"
+red = "#db475f"
+green = "#5f953c"
+yellow = "#ac7925"
+blue = "#3d85dc"
+magenta = "#b250d9"
+cyan = "#2a9595"
+white = "#b9b9b9"
+
+[colors.bright]
+black = "#525252"
+red = "#ed6677"
+green = "#6ead47"
+yellow = "#c68c2e"
+blue = "#5a9bec"
+magenta = "#c36ee7"
+cyan = "#33acac"
+white = "#f1f1f1"
