@@ -14,20 +14,20 @@ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
 # Copy themes instead of symlinking
-mkdir -p ~/.config/omarchy/themes
-cp -r ~/.local/share/omarchy/themes/* ~/.config/omarchy/themes/
+mkdir -p ~/.config/archy/themes
+cp -r ~/.local/share/omarchy/themes/* ~/.config/archy/themes/
 
 # Set initial theme by copying
-mkdir -p ~/.config/omarchy/current/theme
-cp -r ~/.config/omarchy/themes/tokyo-night/* ~/.config/omarchy/current/theme/
-cp ~/.config/omarchy/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png ~/.config/omarchy/current/background
-echo "~/.config/omarchy/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png" > ~/.config/omarchy/current/.background-state
+mkdir -p ~/.config/archy/current/theme
+cp -r ~/.config/archy/themes/tokyo-night/* ~/.config/archy/current/theme/
+cp ~/.config/archy/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png ~/.config/archy/current/background
+echo "~/.config/archy/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png" > ~/.config/archy/current/.background-state
 
 # Copy specific app configs for current theme
-cp ~/.config/omarchy/current/theme/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
+cp ~/.config/archy/current/theme/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
 
 mkdir -p ~/.config/btop/themes
-cp ~/.config/omarchy/current/theme/btop.theme ~/.config/btop/themes/current.theme
+cp ~/.config/archy/current/theme/btop.theme ~/.config/btop/themes/current.theme
 
 mkdir -p ~/.config/mako
-cp ~/.config/omarchy/current/theme/mako.ini ~/.config/mako/config
+cp ~/.config/archy/current/theme/mako.ini ~/.config/mako/config

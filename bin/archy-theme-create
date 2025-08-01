@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# archy-theme-create: Create a new custom theme
+
+if [[ -z "$1" ]]; then
+  echo "Usage: archy-theme-create <theme-name> [base-theme]"
+  echo "Example: archy-theme-create my-dark-theme tokyo-night"
+  exit 1
+fi
+
+THEME_NAME="$1"
+BASE_THEME="${2:-tokyo-night}"
+THEMES_DIR="$HOME/.config/archy/themes"
+NEW_THEME_DIR="$THEMES_DIR/$THEME_NAME"
+BASE_THEME_DIR="$THEMES_DIR/$BASE_THEME"
+
+# Check if theme already exists
+if [[ -d "$NEW_THEME_DIR" ]]; then
+  echo "Theme '$THEME_NAME' already exists!"
+  exit 1
+fi
+
+# Check if base theme exists
+if [[ ! -d "$BASE_THEME_DIR" ]]; then
+  echo "Base theme '$BASE_THEME' not found!"
+  echo "Available themes:"
+  ls "$THEMES_DIR" 2>/dev/null || echo "No themes found"
+  exit 1
+fi
+
+# Create new theme
+echo "Creating theme '$THEME_NAME' based on '$BASE_THEME'..."
+cp -r "$BASE_THEME_DIR" "$NEW_THEME_DIR"
+
+# Remove light.mode file if it exists (let user add it manually if needed)
+rm -f "$NEW_THEME_DIR/light.mode"
+
+echo "✓ Theme '$THEME_NAME' created successfully!"
+echo ""
+echo "Theme location: $NEW_THEME_DIR"
+echo ""
+echo "Edit the following files to customize your theme:"
+echo "  - alacritty.toml    (terminal colors)"
+echo "  - btop.theme        (system monitor)"
+echo "  - hyprland.conf     (window manager)"
+echo "  - mako.ini          (notifications)"
+echo "  - waybar.css        (status bar)"
+echo "  - walker.css        (app launcher)"
+echo ""
+echo "Add wallpapers to: $NEW_THEME_DIR/backgrounds/"
+echo ""
+echo "Apply with: archy-theme-set $THEME_NAME"

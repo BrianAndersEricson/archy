@@ -8,8 +8,8 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-THEMES_DIR="$HOME/.config/omarchy/themes/"
-CURRENT_THEME_DIR="$HOME/.config/omarchy/current/theme"
+THEMES_DIR="$HOME/.config/archy/themes/"
+CURRENT_THEME_DIR="$HOME/.config/archy/current/theme"
 
 THEME_NAME="$1"
 THEME_PATH="$THEMES_DIR/$THEME_NAME"
@@ -26,7 +26,7 @@ mkdir -p "$CURRENT_THEME_DIR"
 cp -r "$THEME_PATH"/* "$CURRENT_THEME_DIR/"
 
 # Change gnome modes
-if [[ -f ~/.config/omarchy/current/theme/light.mode ]]; then
+if [[ -f ~/.config/archy/current/theme/light.mode ]]; then
   gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
   gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
 else

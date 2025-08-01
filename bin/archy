@@ -12,7 +12,7 @@ show_ascii_art() {
 main_menu() {
   show_ascii_art
 
-  local options=("Theme" "Font" "Setup" "Update" "Manual" "Exit")
+  local options=("Theme" "Font" "Setup" "Update" "Exit")
   choice=$(printf "%s\n" "${options[@]}" | gum choose --header "") || exit 0
   case "$choice" in
   Theme) theme_menu ;;
@@ -23,7 +23,7 @@ main_menu() {
     ;;
   Update) update_menu ;;
   Setup) setup_menu ;;
-  Manual) open_manual ;;
+  # Manual option removed
   Exit) clear && exit 0 ;;
   esac
 }
@@ -58,9 +58,10 @@ update_menu() {
 
 theme_menu() {
   show_ascii_art
-  local menu=("Pick" "Install" "Update" "Remove" "Back")
+  local menu=("Pick" "Create" "Install" "Update" "Remove" "Back")
   local commands=(
     "archy-theme-menu"
+    "create_theme_prompt"
     "install_theme_prompt"
     "archy-theme-update"
     "remove_theme_prompt"
@@ -80,6 +81,17 @@ theme_menu() {
       break
     fi
   done
+}
+
+create_theme_prompt() {
+  local theme_name base_theme
+  theme_name=$(gum input --placeholder="New theme name" --header="Create Theme")
+  if [[ -n "$theme_name" ]]; then
+    base_theme=$(gum input --placeholder="Base theme (or press enter for tokyo-night)" --header="Base Theme")
+    archy-theme-create "$theme_name" "${base_theme:-tokyo-night}"
+    ack_command
+  fi
+  theme_menu
 }
 
 install_theme_prompt() {
@@ -102,10 +114,9 @@ remove_theme_prompt() {
 
 setup_menu() {
   show_ascii_art
-  local menu=("Dropbox" "Steam" "Docker DBs" "Fingerprint sensor" "Fido2 device" "Back")
+  local menu=("Dropbox" "Docker DBs" "Fingerprint sensor" "Fido2 device" "Back")
   local commands=(
     "archy-setup-dropbox"
-    "archy-setup-steam"
     "setup_docker_dbs"
     "archy-setup-fingerprint"
     "archy-setup-fido2"

@@ -101,13 +101,8 @@ keywords = ["walker", "github"]
 
 [[builtins.bookmarks.entries]]
 label = "Archy - Github"
-url = "https://github.com/basecamp/omarchy"
-keywords = ["omarchy", "github"]
-
-[[builtins.bookmarks.entries]]
-label = "Archy Manual"
-url = "https://manuals.omamix.org/2/the-archy-manual"
-keywords = ["omarchy"]
+url = "https://github.com/BrianAndersEricson/archy"
+keywords = ["archy", "github"]
 
 [builtins.xdph_picker]
 hidden = true
