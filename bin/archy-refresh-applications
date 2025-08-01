@@ -11,7 +11,7 @@ cp ~/.local/share/archy/applications/*.desktop ~/.local/share/applications/
 cp ~/.local/share/archy/applications/hidden/*.desktop ~/.local/share/applications/
 
 # Only copy xtras if user is not in bare mode
-if [[ ! -f ~/.local/state/omarchy/bare.mode ]] && [ -z "$OMARCHY_BARE" ]; then
+if [[ ! -f ~/.local/state/archy/bare.mode ]] && [ -z "$ARCHY_BARE" ]; then
   cp ~/.local/share/archy/applications/xtras/*.desktop ~/.local/share/applications/
 fi
 

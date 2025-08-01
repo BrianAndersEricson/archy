@@ -26,5 +26,5 @@ cp -f "${HOME}/.local/share/archy/config/${config_file}" "${HOME}/.config/${conf
 if cmp -s "${HOME}/.config/${config_file}" "$backup_file"; then
   rm $backup_file
 else
-  echo -e "\e[31mExisting "${HOME}/.config/${config_file}" replaced with new Omarchy default, but ${backup_file} file was made.\e[0m"
+  echo -e "\e[31mExisting "${HOME}/.config/${config_file}" replaced with new Archy default, but ${backup_file} file was made.\e[0m"
 fi

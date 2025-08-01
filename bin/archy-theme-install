@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# archy-theme-install: Install a new theme from a git repo for Omarchy
+# archy-theme-install: Install a new theme from a git repo for Archy
 # Usage: archy-theme-install <git-repo-url>
 
 if [ -z "$1" ]; then

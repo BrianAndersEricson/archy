@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# archy-theme-remove: Remove a theme from Omarchy by name
+# archy-theme-remove: Remove a theme from Archy by name
 # Usage: archy-theme-remove <theme-name>
 
 if [ -z "$1" ]; then

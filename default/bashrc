@@ -1,6 +1,6 @@
 # All the default Archy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source ~/.local/share/omarchy/default/bash/rc
+source ~/.local/share/archy/default/bash/rc
 
 # Load custom user aliases first
 [[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases

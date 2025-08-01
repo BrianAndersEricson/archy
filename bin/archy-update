@@ -3,7 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-STATE_DIR="$HOME/.local/state/omarchy/migrations"
+STATE_DIR="$HOME/.local/state/archy/migrations"
 
 cd ~/.local/share/archy
 
