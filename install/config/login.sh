@@ -83,12 +83,12 @@ elif [ -d "/etc/cmdline.d" ]; then # UKI
   # Relying on mkinitcpio to assemble a UKI
   # https://wiki.archlinux.org/title/Unified_kernel_image
   if ! grep -q splash /etc/cmdline.d/*.conf; then
-    # Need splash, create the omarchy file
-    echo "splash" | sudo tee -a /etc/cmdline.d/omarchy.conf
+    # Need splash, create the archy file
+    echo "splash" | sudo tee -a /etc/cmdline.d/archy.conf
   fi
   if ! grep -q quiet /etc/cmdline.d/*.conf; then
-    # Need quiet, create or append the omarchy file
-    echo "quiet" | sudo tee -a /etc/cmdline.d/omarchy.conf
+    # Need quiet, create or append the archy file
+    echo "quiet" | sudo tee -a /etc/cmdline.d/archy.conf
   fi
 elif [ -f "/etc/kernel/cmdline" ]; then # UKI Alternate
   # Alternate UKI kernel cmdline location
@@ -122,9 +122,9 @@ else
   echo ""
 fi
 
-if [ "$(plymouth-set-default-theme)" != "omarchy" ]; then
-  sudo cp -r "$HOME/.local/share/omarchy/default/plymouth" /usr/share/plymouth/themes/omarchy/
-  sudo plymouth-set-default-theme -R omarchy
+if [ "$(plymouth-set-default-theme)" != "archy" ]; then
+  sudo cp -r "$HOME/.local/share/omarchy/default/plymouth" /usr/share/plymouth/themes/archy/
+  sudo plymouth-set-default-theme -R archy
 fi
 
 # ==============================================================================

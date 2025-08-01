@@ -17,7 +17,7 @@ main_menu() {
   case "$choice" in
   Theme) theme_menu ;;
   Font)
-    omarchy-font-menu
+    archy-font-menu
     ack_command
     main_menu
     ;;
@@ -32,12 +32,12 @@ update_menu() {
   show_ascii_art
   local menu=("Omarchy" "Waybar" "Walker" "Plymouth" "SwayOSD" "Desktop apps" "Back")
   local commands=(
-    "omarchy-update"
-    "omarchy-refresh-waybar"
-    "omarchy-refresh-walker"
-    "omarchy-refresh-plymouth"
-    "omarchy-refresh-swayosd"
-    "omarchy-refresh-applications"
+    "archy-update"
+    "archy-refresh-waybar"
+    "archy-refresh-walker"
+    "archy-refresh-plymouth"
+    "archy-refresh-swayosd"
+    "archy-refresh-applications"
     "main_menu"
   )
   local choice
@@ -60,9 +60,9 @@ theme_menu() {
   show_ascii_art
   local menu=("Pick" "Install" "Update" "Remove" "Back")
   local commands=(
-    "omarchy-theme-menu"
+    "archy-theme-menu"
     "install_theme_prompt"
-    "omarchy-theme-update"
+    "archy-theme-update"
     "remove_theme_prompt"
     "main_menu"
   )
@@ -86,7 +86,7 @@ install_theme_prompt() {
   local url
   url=$(gum input --placeholder="Git repo URL for theme" --header="")
   if [[ -n "$url" ]]; then
-    omarchy-theme-install "$url"
+    archy-theme-install "$url"
   fi
   theme_menu
 }
@@ -95,7 +95,7 @@ remove_theme_prompt() {
   local theme
   theme=$(gum input --placeholder="Theme name" --header="")
   if [[ -n "$theme" ]]; then
-    omarchy-theme-remove "$theme"
+    archy-theme-remove "$theme"
   fi
   theme_menu
 }
@@ -104,11 +104,11 @@ setup_menu() {
   show_ascii_art
   local menu=("Dropbox" "Steam" "Docker DBs" "Fingerprint sensor" "Fido2 device" "Back")
   local commands=(
-    "omarchy-setup-dropbox"
-    "omarchy-setup-steam"
+    "archy-setup-dropbox"
+    "archy-setup-steam"
     "setup_docker_dbs"
-    "omarchy-setup-fingerprint"
-    "omarchy-setup-fido2"
+    "archy-setup-fingerprint"
+    "archy-setup-fido2"
     "main_menu"
   )
   local choice
@@ -146,7 +146,7 @@ setup_docker_dbs() {
 }
 
 open_manual() {
-  setsid chromium --new-window --ozone-platform=wayland --app="https://manuals.omamix.org/2/the-omarchy-manual" >/dev/null 2>&1 &
+  # Manual link removed - no longer available for Archy
   clear
 }
 
